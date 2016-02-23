@@ -103,6 +103,10 @@ public class Key {
         return new Double(hexToDecimal());
     }
 
+    public Integer getInteger() {
+        return new Integer(getIntegerPart(hexToDecimal()));
+    }
+
     /**
      * @brief Compute if the key is odd or even
      *
