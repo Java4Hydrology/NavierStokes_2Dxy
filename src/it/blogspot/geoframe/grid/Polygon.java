@@ -46,7 +46,7 @@ public class Polygon {
         String message = "-----------------------------------------------\n";
         message += "Number of sides: " + numberOfSides + "\n";
         message += "Area: " + area + "\n";
-        message += "Barycenter: " + barycenter + "\n";
+        message += "Barycenter: (" + barycenter.x + ", " + barycenter.y + ")\n";
         message += "Sides keys: \n";
 
         for (Key side : sides)
@@ -61,7 +61,7 @@ public class Polygon {
         String message = "POLYGON " + key.getInteger() + " ------------------------\n";
         message += "Number of sides: " + numberOfSides + "\n";
         message += "Area: " + area + "\n";
-        message += "Barycenter: " + barycenter + "\n";
+        message += "Barycenter: (" + barycenter.x + ", " + barycenter.y + ")\n";
         message += "Sides keys: \n";
 
         for (Key side : sides)
