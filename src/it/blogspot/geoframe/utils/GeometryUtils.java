@@ -68,10 +68,10 @@ public class GeometryUtils {
 
         double[][] jacobian = new double[2][2];
 
-        jacobian[0][0] = polygonNodesCoordinates[2].x - polygonNodesCoordinates[1].x;
-        jacobian[0][1] = polygonNodesCoordinates[3].x - polygonNodesCoordinates[1].x;
-        jacobian[1][0] = polygonNodesCoordinates[2].y - polygonNodesCoordinates[1].y;
-        jacobian[1][1] = polygonNodesCoordinates[3].y - polygonNodesCoordinates[1].y;
+        jacobian[0][0] = polygonNodesCoordinates[1].x - polygonNodesCoordinates[0].x;
+        jacobian[0][1] = polygonNodesCoordinates[2].x - polygonNodesCoordinates[0].x;
+        jacobian[1][0] = polygonNodesCoordinates[1].y - polygonNodesCoordinates[0].y;
+        jacobian[1][1] = polygonNodesCoordinates[2].y - polygonNodesCoordinates[0].y;
 
         return jacobian;
 
