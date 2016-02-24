@@ -41,7 +41,7 @@ public class GeometryUtils {
     }
 
     public static double computePolygonArea(final double[][] jacobian) {
-        return 0.5*(jacobian[0][0] * jacobian[1][1] - jacobian[0][1] * jacobian[1][0]);
+        return Math.abs(0.5*(jacobian[0][0] * jacobian[1][1] - jacobian[0][1] * jacobian[1][0]));
     }
 
     public static Coordinate2D computePolygonCircumcenter(final double[][] jacobian, final Coordinate2D node) {
