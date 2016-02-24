@@ -127,7 +127,9 @@ public class DualVoronoiConnectivity {
             int neighborEdgeSecondNode = delaunayTriangulation[tmpNeighbor - 1][localNodesIndeces[neighborEdgeCounter][1]];
 
             if (firstNode == neighborEdgeSecondNode &&
-                secondNode == neighborEdgeFirstNode) {
+                secondNode == neighborEdgeFirstNode ||
+                firstNode == neighborEdgeFirstNode &&
+                secondNode == neighborEdgeSecondNode) {
                 neighbor[polygon][edge] = tmpNeighbor;
                 neighborEdges[polygon][edge] = neighborEdgeCounter + 1;
                 break;
@@ -142,7 +144,7 @@ public class DualVoronoiConnectivity {
     }
 
     public int getNeighborPolygon(final int polygon, final int edge) {
-        return neighbor[polygon - 1][edge - 1];
+        return neighbor[polygon][edge];
     }
 
     public int getIndexOfLocalNode(final int polygon, final int edge, final int localNodeIndex)
@@ -153,24 +155,16 @@ public class DualVoronoiConnectivity {
 
     public static void main(String[] args) {
 
-        int[][] tri = {{2,3,8},
-                       {11,10,5},
-                       {11,10,16},
-                       {4,10,5},
-                       {13,14,8},
-                       {15,10,16},
-                       {7,2,8},
-                       {7,13,8},
-                       {7,2,1},
-                       {7,6,1},
-                       {7,13,12},
-                       {7,6,12},
-                       {9,4,3},
-                       {9,3,8},
-                       {9,4,10},
-                       {9,15,14},
-                       {9,14,8},
-                       {9,15,10}};
+        int[][] tri = {{2,5,1},
+                       {4,5,1},
+                       {4,5,8},
+                       {6,2,3},
+                       {6,2,5},
+                       {7,6,10},
+                       {7,6,3},
+                       {9,5,8},
+                       {9,6,5},
+                       {9,6,10}};
 
         DualVoronoiConnectivity dualVoronoiConnectivity = new DualVoronoiConnectivity(tri);
 
